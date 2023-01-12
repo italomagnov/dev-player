@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: #0f0d13;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+#app {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: max-content max-content;
+    place-content: center;
+    grid-template-areas:
+        'A B'
+        'A C';
+
+    gap: 32px;
+}
+
+/* player 1 */
+
+#player-1 {
+    grid-area: A;
+    width: fit-content;
+    padding: 58px 38px;
+}
+
+#player-1 .wrapper {
+    width: 190px;
+}
+
+#player-1 .info {
+    margin-top: 28px;
+}
+
+#player-1 img {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* player 2 */
+
+#player-2 {
+    grid-area: B;
+    height: fit-content;
+}
+
+#player-2 .controls {
+    justify-content: space-around;
+}
+
+/* player 3 */
+
+#player-3 {
+    grid-area: C;
+}
+
+#player-3 .controls {
+    justify-content: space-around;
+}
+
+/* ---------- */
+
+.player {
+    background: #2a2141;
+    padding: 28px;
+    border-radius: 10px;
+}
+
+.player img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.wrapper-info {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.info {
+    display: grid;
+    gap: 9px;
+    color: #e1e1e6;
+}
+
+.info h1 {
+    font-size: 24px;
+}
+
+.info p {
+    font-size: 19px;
+    opacity: 0.67;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+.track {
+    position: relative;
+    margin-top: 28px;
+}
+
+.track::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: #d9d9d9;
+    opacity: 0.3;
+    border-radius: 10px;
+}
+
+.track::after {
+    content: '';
+    background: #d9d9d9;
+    display: block;
+    width: 70%;
+    height: 6px;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 9px;
+
+    font-size: 14px;
+    color: #cacacc;
+    opacity: 0.7;
+}
+
+@media (max-width: 670px) {
+    #app {
+        display: flex;
+        flex-direction: column;
+
+        max-width: 270px;
+        margin: auto;
+        height: auto;
+
+        padding-block: 60px;
+    }
+}
